@@ -34,14 +34,10 @@ class MovieController extends ApiController
         if (! $request->get('title')) {
             return $this->respondValidationError('Please provide a title!');
         }
-        if (! $request->get('img')) {
-            return $this->respondValidationError('Please provide a title!');
-        }
 
         // persist the new movie
         $movie = new Movie;
         $movie->setTitle($request->get('title'));
-        $movie->setImg($request->get('img'));
         $movie->setCount(0);
         $em->persist($movie);
         $em->flush();

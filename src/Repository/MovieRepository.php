@@ -52,7 +52,6 @@ class MovieRepository extends ServiceEntityRepository
             return [
                     'id'    => (int) $movie->getId(),
                     'title' => (string) $movie->getTitle(),
-                    'img' => (string) $movie->getimg(),
                     'count' => (int) $movie->getCount()
             ];
         }
